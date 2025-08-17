@@ -1,0 +1,54 @@
+{
+    "name": "ammardaana/laravel-modular",
+    "description": "Generate laravel Domain driven design (monolith) structure",
+    "keywords": [
+        "ammardaana",
+        "laravel-modular"
+    ],
+    "homepage": "https://github.com/ammardaana/laravel-modular",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "ammar daana",
+            "email": "ammarsufian60@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ammardaana\\LaravelModular\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ammardaana\\LaravelModular\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ammardaana\\LaravelModular\\LaravelModularServiceProvider"
+            ],
+            "aliases": {
+                "LaravelModular": "Ammardaana\\LaravelModular\\LaravelModularFacade"
+            }
+        }
+    }
+}
