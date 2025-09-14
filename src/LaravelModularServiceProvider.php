@@ -28,8 +28,8 @@ class LaravelModularServiceProvider extends ServiceProvider
                 GenerateServiceCommand::class,
                 GenerateActionCommand::class,
                 GenerateDTOCommand::class,
-                GenerateIntegrationCommand::class,
-                GenerateConnectorCommand::class,
+//                GenerateIntegrationCommand::class,
+//                GenerateConnectorCommand::class,
                 GenerateControllerCommand::class,
             ]);
         }
