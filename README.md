@@ -2,14 +2,14 @@ Perfect 👍 sounds like you want the README to be adapted for your actual packa
 
 ---
 
-# Laravel Modular – Command Interfaces for DDD
+# Laravel Modular – Command Interfaces for domain-driven-design DDD
 
-`ammardaana/laravel-modular` provides **command interfaces and handlers** to organize your Laravel applications using **Domain-Driven Design (DDD)** and a **modular architecture**.
+`ammardaana/laravel-domain-driven-design` provides **command interfaces and handlers** to organize your Laravel applications using **Domain-Driven Design (DDD)** and a **modular architecture**.
 
 ## Installation
 
 ```bash
-  composer require ammardaana/laravel-modular
+  composer require ammardaana/laravel-domain-driven-design
 ```
 
 ## Features

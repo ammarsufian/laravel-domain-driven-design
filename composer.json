@@ -1,11 +1,13 @@
 {
-    "name": "ammardaana/laravel-modular",
+    "name": "ammardaana/laravel-domain-driven-design",
     "description": "Generate laravel Domain driven design (monolith) structure",
     "keywords": [
         "ammardaana",
-        "laravel-modular"
+        "laravel-modular",
+        "domain-driven-design",
+        "ddd"
     ],
-    "homepage": "https://github.com/ammardaana/laravel-modular",
+    "homepage": "https://github.com/ammardaana/laravel-domain-driven-design",
     "license": "MIT",
     "type": "library",
     "authors": [
