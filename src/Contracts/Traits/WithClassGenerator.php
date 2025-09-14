@@ -103,7 +103,7 @@ trait WithClassGenerator
         //$this->makeDirectory(dirname($path));
 
         $contents = $this->getSourceFile();
-dd($path, $contents);
+
         if (!$this->files->exists($path)) {
             try {
                 $this->files->put($path, $contents);
