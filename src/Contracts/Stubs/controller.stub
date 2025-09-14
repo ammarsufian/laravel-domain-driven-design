@@ -1,0 +1,10 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Ammardaana\LaravelModular\Contracts\Interfaces\Actionable;
+
+class $CLASS_NAME$Action extends Controller
+{
+
+}

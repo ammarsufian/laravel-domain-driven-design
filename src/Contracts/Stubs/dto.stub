@@ -1,0 +1,18 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Contracts\Support\Arrayable;
+
+class $CLASS_NAME$DTO implements Arrayable
+{
+    public static function createFromArray(array $data): self
+    {
+        // Todo: replace this by your logic
+    }
+
+    public function toArray(): array
+    {
+       // Todo: replace it to return a formatted params
+    }
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace $NAMESPACE$;
+
+class $CLASS_NAME$Service
+{
+    public function foo()
+    {
+        // Todo: replace this by your logic
+    }
+}

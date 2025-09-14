@@ -2,6 +2,13 @@
 
 namespace Ammardaana\LaravelModular;
 
+use Ammardaana\LaravelModular\Console\Commands\GenerateActionCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateControllerCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateDomainCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateDTOCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateServiceCommand;
+use Ammardaana\LaravelModular\Console\Commands\Integrations\GenerateConnectorCommand;
+use Ammardaana\LaravelModular\Console\Commands\Integrations\GenerateIntegrationCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelModularServiceProvider extends ServiceProvider
@@ -11,36 +18,20 @@ class LaravelModularServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-modular');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-modular');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-modular.php'),
+                __DIR__ . '/../config/config.php' => config_path('laravel-modular.php'),
             ], 'config');
 
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-modular'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-modular'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-modular'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                GenerateDomainCommand::class,
+                GenerateServiceCommand::class,
+                GenerateActionCommand::class,
+                GenerateDTOCommand::class,
+                GenerateIntegrationCommand::class,
+                GenerateConnectorCommand::class,
+                GenerateControllerCommand::class,
+            ]);
         }
     }
 
@@ -50,7 +41,7 @@ class LaravelModularServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-modular');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laravel-modular');
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-modular', function () {

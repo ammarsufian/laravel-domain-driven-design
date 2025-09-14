@@ -1,52 +1,73 @@
-# Very short description of the package
+Perfect 👍 sounds like you want the README to be adapted for your actual package `ammardaana/laravel-modular`. Here’s a clean version tailored for that:
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ammardaana/laravel-modular.svg?style=flat-square)](https://packagist.org/packages/ammardaana/laravel-modular)
-[![Total Downloads](https://img.shields.io/packagist/dt/ammardaana/laravel-modular.svg?style=flat-square)](https://packagist.org/packages/ammardaana/laravel-modular)
-![GitHub Actions](https://github.com/ammardaana/laravel-modular/actions/workflows/main.yml/badge.svg)
+---
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+# Laravel Modular – Command Interfaces for DDD
+
+`ammardaana/laravel-modular` provides **command interfaces and handlers** to organize your Laravel applications using **Domain-Driven Design (DDD)** and a **modular architecture**.
 
 ## Installation
 
-You can install the package via composer:
-
 ```bash
-composer require ammardaana/laravel-modular
+  composer require ammardaana/laravel-modular
 ```
+
+## Features
+
+* ✅ Command & CommandHandler interfaces
+* ✅ Clear separation of concerns in your domain layer
+* ✅ Works seamlessly with Laravel service container & command bus
+* ✅ Designed for modular and DDD-based applications
+* ✅ Lightweight and framework-friendly
 
 ## Usage
 
+### 1. Create a Command
+
 ```php
-// Usage description here
+class GenerateActionCommand extends Command
+{
+    public function __construct(Filesystem $files)
+    {
+        parent::__construct();
+
+        $this->files = $files;
+        $this->namespacePostfix = 'Actions';
+        $this->type = 'Action';
+    }
+}
 ```
 
-### Testing
+## Output Structure
 
-```bash
-composer test
+```
+app/
+ └── Domain/
+      ├── Authentication/
+      │    ├── Actions/
+      │    │     └── LoginAction.php
+      │    └── Http/
+      │          └── Controllers
+      │          └── Requests
+      │          └── Resources
+      │          └── Models
+      │          └── Services
+      |
+      └── PurchaseFlow/
 ```
 
-### Changelog
+---
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+## Integration Ideas
 
-## Contributing
+* Use with **Laravel Bus** for async handling
+* Plug into **CQRS** setups for separation of reads & writes
+* Add **middlewares** for validation, logging, or transactions
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email ammarsufian60@gmail.com instead of using the issue tracker.
-
-## Credits
-
--   [ammar daana](https://github.com/ammardaana)
--   [All Contributors](../../contributors)
+---
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+This package is released under the [MIT License](LICENSE).
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+---
