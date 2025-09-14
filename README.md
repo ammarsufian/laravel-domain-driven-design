@@ -1,7 +1,3 @@
-Perfect 👍 sounds like you want the README to be adapted for your actual package `ammardaana/laravel-modular`. Here’s a clean version tailored for that:
-
----
-
 # Laravel Modular – Command Interfaces for domain-driven-design DDD
 
 `ammardaana/laravel-domain-driven-design` provides **command interfaces and handlers** to organize your Laravel applications using **Domain-Driven Design (DDD)** and a **modular architecture**.
