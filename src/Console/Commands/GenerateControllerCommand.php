@@ -23,6 +23,8 @@ class GenerateControllerCommand extends Command
 
     protected string $type;
 
+    protected string $suffixName;
+
     protected const STUB_NAME = 'controller.stub';
 
     protected $files;
@@ -49,8 +51,9 @@ class GenerateControllerCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = '/Http/Controllers';
+        $this->namespacePostfix = 'Http/Controllers';
         $this->type = 'Controller';
+        $this->suffixName = 'Controller';
     }
 
     /**

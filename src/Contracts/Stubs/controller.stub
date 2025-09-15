@@ -2,9 +2,9 @@
 
 namespace $NAMESPACE$;
 
-use Ammardaana\LaravelModular\Contracts\Interfaces\Actionable;
+use App\Http\Controllers\Controller;
 
-class $CLASS_NAME$Action extends Controller
+class $CLASS_NAME$Controller extends Controller
 {
 
 }

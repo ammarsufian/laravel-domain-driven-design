@@ -1,0 +1,16 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class $CLASS_NAME$Resource extends JsonResource
+{
+
+    public function toArray($request): array
+        {
+            return [
+                //todo::replace it by your contents
+            ];
+        }
+}

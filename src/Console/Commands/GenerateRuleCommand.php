@@ -8,7 +8,7 @@ use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class GenerateServiceCommand extends Command
+class GenerateRuleCommand extends Command
 {
     use WithClassGenerator, WithDomainOptions;
 
@@ -21,25 +21,25 @@ class GenerateServiceCommand extends Command
     protected string $stubName;
 
     protected string $type;
+    protected string $suffixName;
 
-    protected const STUB_NAME = 'service.stub';
+    protected const STUB_NAME = 'rule.stub';
 
     protected $files;
-    protected string $suffixName;
 
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:service {--domain=} {--name=}';
+    protected $signature = 'make:rule {--domain=} {--name=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create Domain Service Class';
+    protected $description = 'Create Rule Model Class';
 
     /**
      * Create a new command instance.
@@ -49,9 +49,9 @@ class GenerateServiceCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = 'Services';
-        $this->type = 'Service';
-        $this->suffixName = 'Service';
+        $this->namespacePostfix = 'Http/Requests/Rules';
+        $this->type = 'Rule';
+        $this->suffixName = 'Rule';
     }
 
     /**
@@ -60,7 +60,7 @@ class GenerateServiceCommand extends Command
     public function handle(): int
     {
         $this->generateClass();
-        $this->comment('Service created successfully.');
+        $this->comment('Rule created successfully.');
 
         return self::SUCCESS;
     }

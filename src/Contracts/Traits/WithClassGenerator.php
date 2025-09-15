@@ -4,6 +4,7 @@ namespace Ammardaana\LaravelModular\Contracts\Traits;
 
 use Ammardaana\LaravelModular\Contracts\Interfaces\Actionable;
 use Exception;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 
@@ -32,9 +33,10 @@ trait WithClassGenerator
     public function getStubVariables(): array
     {
         $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
+        $namespace = Str::replace('/', '\\', $this->namespacePostfix);
 
         return [
-            'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$this->namespacePostfix}",
+            'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$namespace}",
             'CLASS_NAME' => $this->getSingularClassName($className),
         ];
     }
@@ -72,7 +74,7 @@ trait WithClassGenerator
     public function getSourceFilePath(): string
     {
         $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
-        $classNamePostfix = ($this->namespacePostfix === 'ServiceFacades') ? 'Service' : $this->getSingularClassName($this->namespacePostfix);
+        $classNamePostfix = ($this->namespacePostfix === 'ServiceFacades') ? 'Service' : $this->getSingularClassName($this->suffixName);
 
         return base_path("app/Domains/{$this->domainName}/{$this->namespacePostfix}")
             . '/'
@@ -100,7 +102,9 @@ trait WithClassGenerator
 
         $path = $this->getSourceFilePath();
 
-        //$this->makeDirectory(dirname($path));
+        if (!File::isDirectory($path)) {
+            $this->makeDirectory(dirname($path));
+        }
 
         $contents = $this->getSourceFile();
 

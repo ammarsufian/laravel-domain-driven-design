@@ -21,6 +21,7 @@ class GenerateDTOCommand extends Command
     protected string $stubName;
 
     protected string $type;
+    protected string $suffixName;
 
     protected const STUB_NAME = 'dto.stub';
 
@@ -50,6 +51,7 @@ class GenerateDTOCommand extends Command
         $this->files = $files;
         $this->namespacePostfix = 'DTOs';
         $this->type = 'DTO';
+        $this->suffixName = 'DTO';
     }
 
     /**

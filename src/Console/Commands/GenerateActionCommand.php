@@ -22,6 +22,7 @@ class GenerateActionCommand extends Command
     protected string $stubName;
 
     protected string $type;
+    protected string $suffixName;
 
     protected const STUB_NAME = 'action.stub';
 
@@ -51,6 +52,7 @@ class GenerateActionCommand extends Command
         $this->files = $files;
         $this->namespacePostfix = 'Actions';
         $this->type = 'Action';
+        $this->suffixName = 'Action';
     }
 
     /**
