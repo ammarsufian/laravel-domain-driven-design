@@ -6,7 +6,7 @@ use Ammardaana\LaravelModular\Contracts\Interfaces\Actionable;
 
 class $CLASS_NAME$Action implements Actionable
 {
-    public static function execute(?array $arguments = [])
+    public function execute(?array $arguments = [])
     {
         //TODO:: write your logic here
     }

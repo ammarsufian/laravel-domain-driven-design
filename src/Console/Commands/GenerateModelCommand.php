@@ -73,9 +73,11 @@ class GenerateModelCommand extends Command
 
     private function generateResources(string $name)
     {
+        $tableName = Str::plural(Str::lower($name));
+
         Artisan::call('make:migration', [
-            'name' => "create_{$name}_table",
-            '--create' => Str::plural(Str::lower($name)),
+            'name' => "create_{$tableName}_table",
+            '--create' => $tableName,
         ]);
 
         Artisan::call('make:resource', [
