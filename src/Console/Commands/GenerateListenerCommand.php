@@ -8,7 +8,7 @@ use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class GenerateRuleCommand extends Command
+class GenerateListenerCommand extends Command
 {
     use WithClassGenerator, WithDomainOptions;
 
@@ -23,7 +23,7 @@ class GenerateRuleCommand extends Command
     protected string $type;
     protected string $suffixName;
 
-    protected const STUB_NAME = 'rule.stub';
+    protected const STUB_NAME = 'listener.stub';
 
     protected $files;
 
@@ -32,14 +32,14 @@ class GenerateRuleCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:rule {--domain=} {--name=}';
+    protected $signature = 'make:listener {--domain=} {--name=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create Rule Class';
+    protected $description = 'Create Listener Class';
 
     /**
      * Create a new command instance.
@@ -49,9 +49,9 @@ class GenerateRuleCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = 'Http/Requests/Rules';
-        $this->type = 'Rule';
-        $this->suffixName = 'Rule';
+        $this->namespacePostfix = 'Listeners';
+        $this->type = 'Listener';
+        $this->suffixName = 'Listener';
     }
 
     /**
@@ -60,7 +60,7 @@ class GenerateRuleCommand extends Command
     public function handle(): int
     {
         $this->generateClass();
-        $this->comment('Rule created successfully.');
+        $this->comment('Listener created successfully.');
 
         return self::SUCCESS;
     }
