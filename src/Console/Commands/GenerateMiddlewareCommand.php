@@ -15,6 +15,8 @@ class GenerateMiddlewareCommand extends Command
     protected ?string $domainName;
 
     protected ?string $className;
+    protected ?string $folderName;
+
 
     protected string $namespacePostfix;
 
@@ -49,7 +51,7 @@ class GenerateMiddlewareCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = 'Middlewares';
+        $this->namespacePostfix = 'Http/Middleware';
         $this->type = 'Middleware';
         $this->suffixName = '';
     }

@@ -2,7 +2,6 @@
 
 namespace Ammardaana\LaravelModular\Contracts\Traits;
 
-use Ammardaana\LaravelModular\Contracts\Interfaces\Actionable;
 use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Pluralizer;
@@ -34,9 +33,10 @@ trait WithClassGenerator
     {
         $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
         $namespace = Str::replace('/', '\\', $this->namespacePostfix);
+        $folderName = filled($this->folderName) ? '\\' . $this->folderName : $namespace;
 
         return [
-            'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$namespace}",
+            'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$namespace}" . $folderName,
             'CLASS_NAME' => $this->getSingularClassName($className),
         ];
     }
@@ -75,8 +75,9 @@ trait WithClassGenerator
     {
         $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
         $classNamePostfix = ($this->namespacePostfix === 'ServiceFacades') ? 'Service' : $this->getSingularClassName($this->suffixName);
+        $folderName = filled($this->folderName) ? '/' . $this->folderName : '';
 
-        return base_path("app/Domains/{$this->domainName}/{$this->namespacePostfix}")
+        return base_path("app/Domains/{$this->domainName}/{$this->namespacePostfix}{$folderName}")
             . '/'
             . $this->getSingularClassName($className)
             . $classNamePostfix

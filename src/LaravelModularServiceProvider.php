@@ -3,10 +3,12 @@
 namespace Ammardaana\LaravelModular;
 
 use Ammardaana\LaravelModular\Console\Commands\GenerateActionCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateConsoleJobCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateControllerCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateDomainCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateDTOCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateEventCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateFacadeCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateListenerCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateMiddlewareCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateModelCommand;
@@ -37,6 +39,8 @@ class LaravelModularServiceProvider extends ServiceProvider
                 GenerateEventCommand::class,
                 GenerateListenerCommand::class,
                 GenerateRequestCommand::class,
+                GenerateFacadeCommand::class,
+                GenerateConsoleJobCommand::class,
             ]);
         }
     }

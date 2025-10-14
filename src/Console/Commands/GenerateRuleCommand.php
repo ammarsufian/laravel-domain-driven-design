@@ -16,6 +16,8 @@ class GenerateRuleCommand extends Command
 
     protected ?string $className;
 
+    protected ?string $folderName;
+
     protected string $namespacePostfix;
 
     protected string $stubName;

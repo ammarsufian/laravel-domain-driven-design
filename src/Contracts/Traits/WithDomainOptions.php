@@ -22,6 +22,8 @@ trait WithDomainOptions
             ));
         }
 
+        $this->folderName = $this->ask("Please enter the folder name of the {$this->type} (optional)");
+
         $this->className = $this->option('name');
 
         if (empty($this->className)) {

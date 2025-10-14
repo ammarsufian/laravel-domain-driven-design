@@ -8,15 +8,13 @@ use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class GenerateDTOCommand extends Command
+class GenerateFacadeCommand extends Command
 {
     use WithClassGenerator, WithDomainOptions;
 
     protected ?string $domainName;
 
     protected ?string $className;
-
-    protected ?string $folderName;
 
     protected string $namespacePostfix;
 
@@ -26,7 +24,7 @@ class GenerateDTOCommand extends Command
 
     protected string $suffixName;
 
-    protected const STUB_NAME = 'dto.stub';
+    protected const STUB_NAME = 'facade.stub';
 
     protected $files;
 
@@ -35,14 +33,14 @@ class GenerateDTOCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:dto {--domain=} {--name=}';
+    protected $signature = 'make:facade {--domain=} {--name=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create Domain DTO Class';
+    protected $description = 'Create Facade Class';
 
     /**
      * Create a new command instance.
@@ -52,9 +50,9 @@ class GenerateDTOCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = 'DTOs';
-        $this->type = 'DTO';
-        $this->suffixName = 'DTO';
+        $this->namespacePostfix = 'Facades';
+        $this->type = 'Facade';
+        $this->suffixName = 'Facade';
     }
 
     /**
@@ -63,7 +61,7 @@ class GenerateDTOCommand extends Command
     public function handle(): int
     {
         $this->generateClass();
-        $this->comment('DTO created successfully.');
+        $this->comment('Event created successfully.');
 
         return self::SUCCESS;
     }

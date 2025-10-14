@@ -16,11 +16,15 @@ class GenerateListenerCommand extends Command
 
     protected ?string $className;
 
+    protected ?string $folderName;
+
+
     protected string $namespacePostfix;
 
     protected string $stubName;
 
     protected string $type;
+
     protected string $suffixName;
 
     protected const STUB_NAME = 'listener.stub';

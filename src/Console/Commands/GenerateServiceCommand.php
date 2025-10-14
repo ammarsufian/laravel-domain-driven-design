@@ -7,6 +7,7 @@ use Ammardaana\LaravelModular\Contracts\Traits\WithClassGenerator;
 use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 
 class GenerateServiceCommand extends Command
 {
@@ -15,6 +16,8 @@ class GenerateServiceCommand extends Command
     protected ?string $domainName;
 
     protected ?string $className;
+
+    protected ?string $folderName;
 
     protected string $namespacePostfix;
 
@@ -25,6 +28,7 @@ class GenerateServiceCommand extends Command
     protected const STUB_NAME = 'service.stub';
 
     protected $files;
+
     protected string $suffixName;
 
     /**
@@ -60,6 +64,12 @@ class GenerateServiceCommand extends Command
     public function handle(): int
     {
         $this->generateClass();
+
+        Artisan::call('make:facade', [
+            '--domain' => $this->domainName,
+            '--name' => $this->className,
+        ]);
+
         $this->comment('Service created successfully.');
 
         return self::SUCCESS;

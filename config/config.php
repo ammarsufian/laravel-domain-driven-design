@@ -5,4 +5,8 @@
  */
 return [
 
+
+    'base_model' => '',
+    'base_controller' => '',
+    'base_service' => '',
 ];

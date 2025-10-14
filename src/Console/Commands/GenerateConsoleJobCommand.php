@@ -8,7 +8,7 @@ use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class GenerateDTOCommand extends Command
+class GenerateConsoleJobCommand extends Command
 {
     use WithClassGenerator, WithDomainOptions;
 
@@ -23,10 +23,9 @@ class GenerateDTOCommand extends Command
     protected string $stubName;
 
     protected string $type;
-
     protected string $suffixName;
 
-    protected const STUB_NAME = 'dto.stub';
+    protected const STUB_NAME = 'command.stub';
 
     protected $files;
 
@@ -35,14 +34,14 @@ class GenerateDTOCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:dto {--domain=} {--name=}';
+    protected $signature = 'make:command {--domain=} {--name=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create Domain DTO Class';
+    protected $description = 'Create Domain Command Class';
 
     /**
      * Create a new command instance.
@@ -52,9 +51,9 @@ class GenerateDTOCommand extends Command
         parent::__construct();
 
         $this->files = $files;
-        $this->namespacePostfix = 'DTOs';
-        $this->type = 'DTO';
-        $this->suffixName = 'DTO';
+        $this->namespacePostfix = 'Console/Commands';
+        $this->type = 'Command';
+        $this->suffixName = 'Command';
     }
 
     /**
