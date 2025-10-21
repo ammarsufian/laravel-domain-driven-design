@@ -33,7 +33,7 @@ trait WithClassGenerator
     {
         $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
         $namespace = Str::replace('/', '\\', $this->namespacePostfix);
-        $folderName = filled($this->folderName) ? '\\' . $this->folderName : $namespace;
+        $folderName = filled($this->folderName) ? '\\' . $this->folderName : '';
 
         return [
             'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$namespace}" . $folderName,
