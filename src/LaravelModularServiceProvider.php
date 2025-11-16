@@ -7,6 +7,7 @@ use Ammardaana\LaravelModular\Console\Commands\GenerateConsoleJobCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateControllerCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateDomainCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateDTOCommand;
+use Ammardaana\LaravelModular\Console\Commands\GenerateEnumCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateEventCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateFacadeCommand;
 use Ammardaana\LaravelModular\Console\Commands\GenerateListenerCommand;
@@ -41,6 +42,7 @@ class LaravelModularServiceProvider extends ServiceProvider
                 GenerateRequestCommand::class,
                 GenerateFacadeCommand::class,
                 GenerateConsoleJobCommand::class,
+                GenerateEnumCommand::class,
             ]);
         }
     }

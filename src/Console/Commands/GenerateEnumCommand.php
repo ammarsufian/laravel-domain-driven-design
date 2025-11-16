@@ -1,0 +1,77 @@
+<?php
+
+namespace Ammardaana\LaravelModular\Console\Commands;
+
+use Ammardaana\LaravelModular\Contracts\Traits\WithClassGenerator;
+use Ammardaana\LaravelModular\Contracts\Traits\WithDomainOptions;
+use Exception;
+use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+
+class GenerateEnumCommand extends Command
+{
+    use WithClassGenerator, WithDomainOptions;
+
+    protected ?string $domainName;
+
+    protected ?string $className;
+
+    protected ?string $folderName;
+
+    protected string $namespacePostfix;
+
+    protected string $stubName;
+
+    protected string $type;
+
+    protected string $suffixName;
+
+    protected const STUB_NAME = 'enum.stub';
+
+    protected $files;
+
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'make:enum {--domain=} {--name=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Create Domain Enum Class';
+
+    /**
+     * Create a new command instance.
+     */
+    public function __construct(Filesystem $files)
+    {
+        parent::__construct();
+
+        $this->files = $files;
+        $this->namespacePostfix = 'Enums';
+        $this->type = 'Enum';
+        $this->suffixName = 'Enum';
+    }
+
+    /**
+     * Execute the console command.
+     */
+    public function handle(): int
+    {
+        try {
+            $this->generateClass();
+            $this->comment('Enum created successfully.');
+
+            return self::SUCCESS;
+
+        } catch (Exception $exception) {
+            $this->error($exception->getMessage());
+            return self::FAILURE;
+        }
+    }
+}
+
