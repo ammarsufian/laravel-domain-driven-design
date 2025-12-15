@@ -1,0 +1,12 @@
+<?php
+
+namespace $NAMESPACE$;
+
+enum $CLASS_NAME$Enum: string
+{
+    // Add your enum cases here
+    // Example:
+    // case ACTIVE = 'active';
+    // case INACTIVE = 'inactive';
+}
+

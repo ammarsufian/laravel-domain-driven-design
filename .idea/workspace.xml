@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd4d9009-180c-40b7-a971-632f28c49ef2" name="Changes" comment="Apply the following changes:&#10;&#10;1- Add request generation command&#10;2- Add event generation command&#10;3- Add listener generation command">
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateActionCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateActionCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateControllerCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateControllerCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateDTOCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateDTOCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateEventCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateEventCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateListenerCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateListenerCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateMiddlewareCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateMiddlewareCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateModelCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateModelCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateRequestCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateRequestCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateResourceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateResourceCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateRuleCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateRuleCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Commands/GenerateServiceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Commands/GenerateServiceCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Contracts/Traits/WithClassGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contracts/Traits/WithClassGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Contracts/Traits/WithDomainOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contracts/Traits/WithDomainOptions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LaravelModularServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelModularServiceProvider.php" afterDir="false" />
-    </list>
+    <list default="true" id="bd4d9009-180c-40b7-a971-632f28c49ef2" name="Changes" comment="Apply the following changes:&#10;&#10;1- Add request generation command&#10;2- Add event generation command&#10;3- Add listener generation command" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,13 +23,13 @@
     &quot;assignee&quot;: &quot;ammarsufian&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ammarsufian/laravel-modular.git&quot;,
-    &quot;accountId&quot;: &quot;e74b9173-a118-41c8-a719-d766f214326b&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:ammarsufian/laravel-domain-driven-design.git",
+    "accountId": "6772bc37-86d5-434e-bed1-a27ec20ec6db"
   }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.6/bin/php">
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
@@ -165,21 +148,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ammardaana/Downloads/laravel-modular/src/Contracts/Stubs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feature/add-enum-generator",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/ammardaana/Downloads/laravel-modular/src/Contracts/Stubs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Contracts/Stubs" />
@@ -188,8 +176,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PS-251.26927.60" />
-        <option value="bundled-php-predefined-a98d8de5180a-e5747d4f5a45-com.jetbrains.php.sharedIndexes-PS-251.26927.60" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PS-252.27397.112" />
+        <option value="bundled-php-predefined-a98d8de5180a-b35feea871ed-com.jetbrains.php.sharedIndexes-PS-252.27397.112" />
       </set>
     </attachedChunks>
   </component>
@@ -203,6 +191,7 @@
       <workItem from="1757938191498" duration="326000" />
       <workItem from="1757938928308" duration="6682000" />
       <workItem from="1759747872537" duration="19147000" />
+      <workItem from="1763281047456" duration="2465000" />
     </task>
     <task id="LOCAL-00001" summary="Apply the following changes:&#10;&#10;1- fix controller creation &#10;2- add command to generate rules &#10;3- add command to generate model&#10;4- add command to generate resource&#10;5- add command to generate middleware">
       <option name="closed" value="true" />
